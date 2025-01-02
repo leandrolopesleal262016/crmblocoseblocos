@@ -1,0 +1,30 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="main-content">
+    <h2>Tarefas</h2>
+    <button class="btn btn-primary mb-3">Criar Tarefa</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dados das tarefas serão renderizados aqui -->
+            <tr>
+                <td>Revisar contrato</td>
+                <td>Revisar o contrato do cliente X</td>
+                <td>Pendente</td>
+                <td>
+                    <button class="btn btn-sm btn-success">Concluir</button>
+                    <button class="btn btn-sm btn-danger">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

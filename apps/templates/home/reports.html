@@ -1,0 +1,37 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="main-content">
+    <h2>Relatórios</h2>
+    <p>Gráficos e métricas principais do CRM aparecerão aqui.</p>
+    <canvas id="reportChart" width="400" height="200"></canvas>
+</div>
+
+<!-- Adicionar o Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Exemplo de gráfico com Chart.js
+    var ctx = document.getElementById('reportChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março'],
+            datasets: [{
+                label: 'Vendas',
+                data: [5000, 10000, 7000],
+                backgroundColor: ['rgba(75, 192, 192, 0.2)'],
+                borderColor: ['rgba(75, 192, 192, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}
