@@ -22,15 +22,13 @@ def index():
 @login_required
 def contacts():
     if request.method == 'POST':
-        # Capturar dados do formulário
+        # Manter a lógica existente de POST
         name = request.form.get('name')
         email = request.form.get('email')
         phone = request.form.get('phone')
 
-        # Criar um novo contato
         new_contact = Contact(name=name, email=email, phone=phone)
 
-        # Adicionar ao banco de dados
         try:
             db.session.add(new_contact)
             db.session.commit()
@@ -41,8 +39,22 @@ def contacts():
 
         return redirect(url_for('home_blueprint.contacts'))
 
-    # Buscar todos os contatos para exibição na tabela
-    contacts = Contact.query.all()
+    # Adicionar lógica de busca para método GET
+    search = request.args.get('search', '')
+    
+    if search:
+        # Busca por nome, email ou telefone
+        contacts = Contact.query.filter(
+            db.or_(
+                Contact.name.ilike(f'%{search}%'),
+                Contact.email.ilike(f'%{search}%'),
+                Contact.phone.ilike(f'%{search}%')
+            )
+        ).all()
+    else:
+        # Se não houver busca, retorna todos os contatos
+        contacts = Contact.query.all()
+
     return render_template('home/contacts.html', contacts=contacts, segment='contacts')
 
 

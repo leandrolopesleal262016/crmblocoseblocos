@@ -9,6 +9,14 @@
         Adicionar Contato
     </button>
 
+    <!-- Adicione isso logo após o botão "Adicionar Contato" -->
+    <div class="mb-3">
+        <form method="GET" action="/contacts" class="d-flex">
+            <input type="text" name="search" class="form-control me-2" placeholder="Pesquisar contatos..." value="{{ request.args.get('search', '') }}">
+            <button type="submit" class="btn btn-outline-primary">Buscar</button>
+        </form>
+    </div>
+
     <!-- Modal para adicionar novo contato -->
     <div class="modal fade" id="addContactModal" tabindex="-1" aria-labelledby="addContactModalLabel" aria-hidden="true">
         <div class="modal-dialog">
