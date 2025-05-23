@@ -3,7 +3,7 @@
     <!-- Brand -->
     <div class="sidenav-header  align-items-center">
       <a class="navbar-brand" href="/">        
-        <img src="/static/assets/img/brand/blocos.png" class="navbar-brand-img" alt="CRM Logo" style="transform: scale(2);">
+        <img src="/static/assets/img/brand/blocos.png" class="navbar-brand-img" alt="CRM Logo" style="transform: scale(3);">
       </a>
     </div>
     <div class="navbar-inner">
@@ -19,12 +19,12 @@
             </a>
           </li>
           <!-- Contatos -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link {% if 'contacts' in segment %} active {% endif %}" href="/contacts">
               <i class="ni ni-single-02 text-yellow"></i>
               <span class="nav-link-text">Contatos</span>
             </a>
-          </li>
+          </li> -->
           <!-- Tarefas -->
           <li class="nav-item">
             <a class="nav-link {% if 'tasks' in segment %} active {% endif %}" href="/tasks">
@@ -32,20 +32,34 @@
               <span class="nav-link-text">Tarefas</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'tasks' in segment %} active {% endif %}" href="/tables">
+              <i class="ni ni-bullet-list-67 text-info"></i>
+              <span class="nav-link-text">Controle de pedidos</span>
+            </a>
+          </li>
           <!-- Oportunidades -->
           <li class="nav-item">
             <a class="nav-link {% if 'opportunities' in segment %} active {% endif %}" href="/opportunities">
               <i class="ni ni-chart-bar-32 text-info"></i>
-              <span class="nav-link-text">Oportunidades</span>
+              <span class="nav-link-text">Financeiro</span>
             </a>
           </li>
-          <!-- Relatórios -->
+          <!-- Orçamentaria -->
+          <li class="nav-item">
+            <a class="nav-link {% if 'reports' in segment %} active {% endif %}" href="/reports">
+              <i class="ni ni-paper-diploma text-primary"></i>
+              <span class="nav-link-text">Orçamentaria</span>
+            </a>
+          </li>
+          <!-- Relatórios
           <li class="nav-item">
             <a class="nav-link {% if 'reports' in segment %} active {% endif %}" href="/reports">
               <i class="ni ni-chart-pie-35 text-orange"></i>
               <span class="nav-link-text">Relatórios</span>
             </a>
-          </li>
+          </li> -->
+          
         </ul>
         <!-- Divider -->
         <hr class="my-3">
